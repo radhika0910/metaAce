@@ -1,0 +1,16 @@
+.register button {
+    background-color: transparent;
+    border: 1px solid #FFF;
+    border-radius: 20px;
+
+    color: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    transition: 0.2s all ease-in-out;
+}
+
+.register button:hover {
+    color: #3393bd;
+    background-color: #fff;
+    cursor: pointer;
+}

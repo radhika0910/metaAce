@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="icon" type="image/png" href="assets/images/mACE_logo_favicon.ico">
+    <link rel="canonical" href="https://3dviewer.net">
+
+    <title>MetaACE 3D Viewer</title>
+
+    <!-- meta start -->
+    <!-- meta end -->
+
+    <!-- website start -->
+    <link rel="stylesheet" type="text/css" href="../build/website_dev/o3dv.website.min.css">
+    <link rel="stylesheet" href="/website/source/website/css/custom.css">
+    <script type="text/javascript" src="../build/website_dev/o3dv.website.min.js"></script>
+    <!-- website end -->
+    <!-- plugins start -->
+    <!-- plugins end -->
+
+    <!-- analytics start -->
+    <script type="text/javascript">
+        OV.SetWebsiteEventHandler ((eventName, eventLabel, eventParams) => {
+            console.log ({
+                eventName : eventName,
+                eventLabel : eventLabel,
+                eventParams : eventParams
+            });
+        });
+    </script>
+    <!-- analytics end -->
+
+    <!-- website init start -->
+    <script type="text/javascript">
+        OV.StartWebsite ('../libs');
+    </script>
+    <!-- website init end -->
+
+</head>
+
+<body>
+    <input type="file" id="open_file" style="display:none;" multiple></input>
+    <div class="header" id="header">
+        <div class="title">
+            <div class="title_left">
+                <p><a href="index.html">
+                    <img style="width:165px; height:auto; float:left;" class="logo_image" src="assets/images/mACE_logo_text.png" />
+                </a>
+
+</p>
+            </div>
+
+
+            <div class="title_right" id="header_buttons">
+
+</div>
+            <div class="main_file_name only_full_width" id="main_file_name"></div>
+        </div>
+        <div class="toolbar" id="toolbar"></div>
+    </div>
+    <div class="main" id="main">
+        <div class="main_left_container only_full_width" id="main_left_container">
+            <div class="main_navigator ov_panel_set_container" id="main_navigator"></div>
+            <div class="main_splitter" id="main_navigator_splitter"></div>
+        </div>
+        <div class="main_viewer" id="main_viewer"></div>
+        <div class="main_right_container only_full_width" id="main_right_container">
+            <div class="main_splitter" id="main_sidebar_splitter"></div>
+            <div class="main_sidebar ov_panel_set_right_container" id="main_sidebar"></div>
+        </div>
+    </div>
+  <div class="intro ov_thin_scrollbar" id="intro">
+        <div class="intro_content">
+            <div class="intro_logo">
+                <div class="intro_dragdrop_text">OOPS !! Project Empty </div>
+            </div>
+
+    </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

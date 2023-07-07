@@ -1,0 +1,494 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Clash Report</title>
+<style>
+          body,table {
+          font-family: Calibri, Tahoma, Verdana, Arial, sans-serif;
+          }
+
+          softBreak{
+          mso-data-placement: same-cell;
+          }
+
+          tr.headerRow{
+          font-weight: bold;
+          }
+
+          table.titleTable tr.headerRow{
+          height: 75px;
+          }
+
+          table.titleTable td.headerCell{
+          font-size: 18pt;
+          vertical-align: middle;
+          }
+
+          table.titleTable td.logoCell{
+          padding: 5px 0px 0px 0px;
+          width: 180px;
+          vertical-align: middle;
+          }
+
+          table.testSummaryTable{
+          border: 3px solid black;
+          text-align: center;
+          background-color: #eeeeee;
+          border-collapse: collapse;
+          }
+
+          table.testSummaryTable tr.headerRow{
+          background: #eeeeee;
+          }
+
+          table.testSummaryTable td{
+          border-width: 1px;
+          border-style: solid;
+          border-color: #666666;
+          }
+
+          table.testSummaryTable td.testName{
+          font-size: 16pt;
+          font-weight: bold;
+          vertical-align: middle;
+          text-align: center;
+          }
+
+          table.mainTable{
+          border-collapse: collapse;
+          }
+
+          table.mainTable tr.contentRow{
+          height: 100px;
+          }
+
+          table.mainTable tr.childRow{
+          height: 100px;
+          }
+
+          table.mainTable tr.childRowLast{
+          height: 100px;
+          }
+
+          table.mainTable tr.clashGroupRow{
+          height: 100px;
+          font-weight: bold;
+          }
+
+          table.mainTable td{
+          vertical-align: middle;
+          border: 1px solid #999999;
+          }
+
+          table.mainTable td.mergedCellHeader{
+          text-align:center;
+          }
+
+          table.mainTable tr.clashGroupRow td{
+          font-weight: bold;
+          border-top: 5px solid #333333;
+          }
+
+          table.mainTable tr.childRow td, table.mainTable tr.childRowLast td{
+          color: #707070;
+          }
+
+          table.mainTable tr.childRow td.contentCell, table.mainTable tr.childRowLast td.contentCell{
+          background-color: #ffffee;
+          }
+
+          table.mainTable tr.childRowLast td{
+          border-bottom: 5px solid #333333;
+          }
+
+          table.mainTable td.clashGroupCell{
+          background: #ffff99;
+          }
+
+          table.mainTable td.item1HeaderGroup{
+          background-color: #99ccff;
+          text-align: center;
+          }
+
+          table.mainTable td.item2HeaderGroup{
+          background-color: #ffcccc;
+          text-align: center;
+          }
+
+          table.mainTable td.item1Header{
+          background-color: #99ccff;
+          }
+
+
+          table.mainTable td.item2Header{
+          background-color: #ffcccc;
+          }
+
+          table.mainTable td.generalHeader{
+          background-color: #eeeeee;
+          }
+
+
+          table.mainTable td.item1Content{
+          background-color: #ddeeff;
+          }
+
+          table.mainTable td.item2Content{
+          background-color: #ffeeee;
+          }
+
+          table.mainTable tr.clashGroupRow td.item1Content{
+          background-color: #bbddff;
+          }
+
+          table.mainTable tr.clashGroupRow td.item2Content{
+          background-color: #ffdddd;
+          }
+
+
+          span.hiddenText{
+          color: white;
+          height: 1px;
+          font-size: 5pt;
+          }
+        </style>
+</head>
+<body>
+<table class="titleTable">
+<tr class="headerRow">
+<td class="logoCell" colspan="3"><img alt="logo" src="Architecture vs FPS_files\logo.jpg"></td>
+<td class="headerCell" colspan="50">
+              Clash Report<br></td>
+<tr>
+<td></td>
+</tr>
+</tr>
+</table><br><table class="testSummaryTable">
+<tr class="headerRow">
+<td rowspan="2" colspan="2" class="testName">Test 2</td>
+<td class="headerCell">Tolerance</td>
+<td class="headerCell">Clashes</td>
+<td class="headerCell">New</td>
+<td class="headerCell">Active</td>
+<td class="headerCell">Reviewed</td>
+<td class="headerCell">Approved</td>
+<td class="headerCell">Resolved</td>
+<td class="headerCell">Type</td>
+<td class="headerCell">Status</td>
+</tr>
+<tr class="contentRow">
+<td class="contentCell">0.025m</td>
+<td class="contentCell">11</td>
+<td class="contentCell">5</td>
+<td class="contentCell">0</td>
+<td class="contentCell">0</td>
+<td class="contentCell">0</td>
+<td class="contentCell">6</td>
+<td class="contentCell">Hard</td>
+<td class="contentCell">OK</td>
+</tr>
+</table><br><table class="mainTable">
+<tr class="headerRow">
+<td colspan="13" class="generalHeader"></td>
+<td colspan="4" class="item1HeaderGroup">Item 1</td>
+<td colspan="4" class="item2HeaderGroup">Item 2</td>
+</tr>
+<tr class="headerRow">
+<td colspan="2" class="generalHeader">Image</td>
+<td colspan="2" class="generalHeader">Clash Name</td>
+<td class="generalHeader">Status</td>
+<td class="generalHeader">Distance</td>
+<td class="generalHeader">Description</td>
+<td class="generalHeader">Date Found</td>
+<td class="generalHeader">Date Approved</td>
+<td class="generalHeader">Approved By</td>
+<td colspan="3" class="generalHeader">Clash Point</td>
+<td class="item1Header">Item ID</td>
+<td class="item1Header">Layer</td>
+<td class="item1Header">Item Name</td>
+<td class="item1Header">Item Type</td>
+<td class="item2Header">Item ID</td>
+<td class="item2Header">Layer</td>
+<td class="item2Header">Item Name</td>
+<td class="item2Header">Item Type</td>
+</tr>
+<tr class="contentRow">
+<td colspan="2" class="contentCell"><a target="_blank" href="Architecture vs FPS_files\cd010001.jpg "><img border="0" width="95" height="95" src="Architecture vs FPS_files\cd010001.jpg"></a></td>
+<td colspan="2" class="contentCell">Clash4</td>
+<td class="contentCell">Resolved</td>
+<td class="contentCell">-0.049</td>
+<td class="contentCell">Hard</td>
+<td class="contentCell">2023/6/17 
+      12:40</td>
+<td class="contentCell"></td>
+<td class="contentCell"></td>
+<td colspan="3" class="contentCell">
+          x:-31.879,
+          y:1.505,
+          z:30.186</td>
+<td class="item1Content"><i>Element ID</i>:
+            1087624</td>
+<td class="item1Content">9TH FLOOR PLAN</td>
+<td class="item1Content">Room 10</td>
+<td class="item1Content">Solid</td>
+<td class="item2Content"><i>Element ID</i>:
+            956834</td>
+<td class="item2Content">NINTH FLOOR</td>
+<td class="item2Content">Copper</td>
+<td class="item2Content">Solid</td>
+</tr>
+<tr class="contentRow">
+<td colspan="2" class="contentCell"><a target="_blank" href="Architecture vs FPS_files\cd010002.jpg "><img border="0" width="95" height="95" src="Architecture vs FPS_files\cd010002.jpg"></a></td>
+<td colspan="2" class="contentCell">Clash5</td>
+<td class="contentCell">Resolved</td>
+<td class="contentCell">-0.049</td>
+<td class="contentCell">Hard</td>
+<td class="contentCell">2023/6/17 
+      12:40</td>
+<td class="contentCell"></td>
+<td class="contentCell"></td>
+<td colspan="3" class="contentCell">
+          x:-31.879,
+          y:1.505,
+          z:30.186</td>
+<td class="item1Content"><i>Element ID</i>:
+            1088843</td>
+<td class="item1Content">9TH FLOOR PLAN</td>
+<td class="item1Content">Room 12</td>
+<td class="item1Content">Solid</td>
+<td class="item2Content"><i>Element ID</i>:
+            956834</td>
+<td class="item2Content">NINTH FLOOR</td>
+<td class="item2Content">Copper</td>
+<td class="item2Content">Solid</td>
+</tr>
+<tr class="contentRow">
+<td colspan="2" class="contentCell"><a target="_blank" href="Architecture vs FPS_files\cd010003.jpg "><img border="0" width="95" height="95" src="Architecture vs FPS_files\cd010003.jpg"></a></td>
+<td colspan="2" class="contentCell">Clash1</td>
+<td class="contentCell">Resolved</td>
+<td class="contentCell">-0.051</td>
+<td class="contentCell">Hard</td>
+<td class="contentCell">2023/6/17 
+      12:40</td>
+<td class="contentCell"></td>
+<td class="contentCell"></td>
+<td colspan="3" class="contentCell">
+          x:-31.879,
+          y:1.528,
+          z:30.177</td>
+<td class="item1Content"><i>Element ID</i>:
+            1087624</td>
+<td class="item1Content">9TH FLOOR PLAN</td>
+<td class="item1Content">Room 10</td>
+<td class="item1Content">Solid</td>
+<td class="item2Content"><i>Element ID</i>:
+            980124</td>
+<td class="item2Content">&lt;No level&gt;</td>
+<td class="item2Content">MILD STEEL</td>
+<td class="item2Content">Solid</td>
+</tr>
+<tr class="contentRow">
+<td colspan="2" class="contentCell"><a target="_blank" href="Architecture vs FPS_files\cd010004.jpg "><img border="0" width="95" height="95" src="Architecture vs FPS_files\cd010004.jpg"></a></td>
+<td colspan="2" class="contentCell">Clash2</td>
+<td class="contentCell">Resolved</td>
+<td class="contentCell">-0.051</td>
+<td class="contentCell">Hard</td>
+<td class="contentCell">2023/6/17 
+      12:40</td>
+<td class="contentCell"></td>
+<td class="contentCell"></td>
+<td colspan="3" class="contentCell">
+          x:-31.879,
+          y:1.528,
+          z:30.177</td>
+<td class="item1Content"><i>Element ID</i>:
+            1088843</td>
+<td class="item1Content">9TH FLOOR PLAN</td>
+<td class="item1Content">Room 12</td>
+<td class="item1Content">Solid</td>
+<td class="item2Content"><i>Element ID</i>:
+            980124</td>
+<td class="item2Content">&lt;No level&gt;</td>
+<td class="item2Content">MILD STEEL</td>
+<td class="item2Content">Solid</td>
+</tr>
+<tr class="contentRow">
+<td colspan="2" class="contentCell"><a target="_blank" href="Architecture vs FPS_files\cd010005.jpg "><img border="0" width="95" height="95" src="Architecture vs FPS_files\cd010005.jpg"></a></td>
+<td colspan="2" class="contentCell">Clash6</td>
+<td class="contentCell">Resolved</td>
+<td class="contentCell">-0.048</td>
+<td class="contentCell">Hard</td>
+<td class="contentCell">2023/6/17 
+      12:40</td>
+<td class="contentCell">2023/6/17 
+      12:44</td>
+<td class="contentCell">ADI</td>
+<td colspan="3" class="contentCell">
+          x:-32.040,
+          y:1.239,
+          z:30.185</td>
+<td class="item1Content"><i>Element ID</i>:
+            1087624</td>
+<td class="item1Content">9TH FLOOR PLAN</td>
+<td class="item1Content">Room 10</td>
+<td class="item1Content">Solid</td>
+<td class="item2Content"><i>Element ID</i>:
+            925325</td>
+<td class="item2Content">NINTH FLOOR</td>
+<td class="item2Content">Copper</td>
+<td class="item2Content">Solid</td>
+</tr>
+<tr class="contentRow">
+<td colspan="2" class="contentCell"><a target="_blank" href="Architecture vs FPS_files\cd010006.jpg "><img border="0" width="95" height="95" src="Architecture vs FPS_files\cd010006.jpg"></a></td>
+<td colspan="2" class="contentCell">Clash7</td>
+<td class="contentCell">Resolved</td>
+<td class="contentCell">-0.048</td>
+<td class="contentCell">Hard</td>
+<td class="contentCell">2023/6/17 
+      12:40</td>
+<td class="contentCell"></td>
+<td class="contentCell"></td>
+<td colspan="3" class="contentCell">
+          x:-32.040,
+          y:1.239,
+          z:30.185</td>
+<td class="item1Content"><i>Element ID</i>:
+            1088843</td>
+<td class="item1Content">9TH FLOOR PLAN</td>
+<td class="item1Content">Room 12</td>
+<td class="item1Content">Solid</td>
+<td class="item2Content"><i>Element ID</i>:
+            925325</td>
+<td class="item2Content">NINTH FLOOR</td>
+<td class="item2Content">Copper</td>
+<td class="item2Content">Solid</td>
+</tr>
+<tr class="contentRow">
+<td colspan="2" class="contentCell"><a target="_blank" href="Architecture vs FPS_files\cd010007.jpg "><img border="0" width="95" height="95" src="Architecture vs FPS_files\cd010007.jpg"></a></td>
+<td colspan="2" class="contentCell">Clash8</td>
+<td class="contentCell">New</td>
+<td class="contentCell">-0.047</td>
+<td class="contentCell">Hard</td>
+<td class="contentCell">2023/6/17 
+      12:40</td>
+<td class="contentCell"></td>
+<td class="contentCell"></td>
+<td colspan="3" class="contentCell">
+          x:-16.059,
+          y:-3.975,
+          z:30.154</td>
+<td class="item1Content"><i>Element ID</i>:
+            1074633</td>
+<td class="item1Content">9TH FLOOR PLAN</td>
+<td class="item1Content">Brick, Common</td>
+<td class="item1Content">Solid</td>
+<td class="item2Content"><i>Element ID</i>:
+            980124</td>
+<td class="item2Content">&lt;No level&gt;</td>
+<td class="item2Content">MILD STEEL</td>
+<td class="item2Content">Solid</td>
+</tr>
+<tr class="contentRow">
+<td colspan="2" class="contentCell"><a target="_blank" href="Architecture vs FPS_files\cd010008.jpg "><img border="0" width="95" height="95" src="Architecture vs FPS_files\cd010008.jpg"></a></td>
+<td colspan="2" class="contentCell">Clash10</td>
+<td class="contentCell">New</td>
+<td class="contentCell">-0.043</td>
+<td class="contentCell">Hard</td>
+<td class="contentCell">2023/6/17 
+      12:40</td>
+<td class="contentCell"></td>
+<td class="contentCell"></td>
+<td colspan="3" class="contentCell">
+          x:-15.909,
+          y:-3.963,
+          z:30.162</td>
+<td class="item1Content"><i>Element ID</i>:
+            1074633</td>
+<td class="item1Content">9TH FLOOR PLAN</td>
+<td class="item1Content">Brick, Common</td>
+<td class="item1Content">Solid</td>
+<td class="item2Content"><i>Element ID</i>:
+            925477</td>
+<td class="item2Content">NINTH FLOOR</td>
+<td class="item2Content">Copper</td>
+<td class="item2Content">Solid</td>
+</tr>
+<tr class="contentRow">
+<td colspan="2" class="contentCell"><a target="_blank" href="Architecture vs FPS_files\cd010009.jpg "><img border="0" width="95" height="95" src="Architecture vs FPS_files\cd010009.jpg"></a></td>
+<td colspan="2" class="contentCell">Clash11</td>
+<td class="contentCell">New</td>
+<td class="contentCell">-0.036</td>
+<td class="contentCell">Hard</td>
+<td class="contentCell">2023/6/17 
+      12:40</td>
+<td class="contentCell"></td>
+<td class="contentCell"></td>
+<td colspan="3" class="contentCell">
+          x:-13.756,
+          y:1.617,
+          z:30.164</td>
+<td class="item1Content"><i>Element ID</i>:
+            1051495</td>
+<td class="item1Content">9TH FLOOR PLAN</td>
+<td class="item1Content">Brick, Common</td>
+<td class="item1Content">Solid</td>
+<td class="item2Content"><i>Element ID</i>:
+            980124</td>
+<td class="item2Content">&lt;No level&gt;</td>
+<td class="item2Content">MILD STEEL</td>
+<td class="item2Content">Solid</td>
+</tr>
+<tr class="contentRow">
+<td colspan="2" class="contentCell"><a target="_blank" href="Architecture vs FPS_files\cd010010.jpg "><img border="0" width="95" height="95" src="Architecture vs FPS_files\cd010010.jpg"></a></td>
+<td colspan="2" class="contentCell">Clash3</td>
+<td class="contentCell">New</td>
+<td class="contentCell">-0.050</td>
+<td class="contentCell">Hard</td>
+<td class="contentCell">2023/6/17 
+      12:40</td>
+<td class="contentCell"></td>
+<td class="contentCell"></td>
+<td colspan="3" class="contentCell">
+          x:-13.756,
+          y:1.645,
+          z:30.164</td>
+<td class="item1Content"><i>Element ID</i>:
+            1051495</td>
+<td class="item1Content">9TH FLOOR PLAN</td>
+<td class="item1Content">Brick, Common</td>
+<td class="item1Content">Solid</td>
+<td class="item2Content"><i>Element ID</i>:
+            925591</td>
+<td class="item2Content">NINTH FLOOR</td>
+<td class="item2Content">Copper</td>
+<td class="item2Content">Solid</td>
+</tr>
+<tr class="contentRow">
+<td colspan="2" class="contentCell"><a target="_blank" href="Architecture vs FPS_files\cd010011.jpg "><img border="0" width="95" height="95" src="Architecture vs FPS_files\cd010011.jpg"></a></td>
+<td colspan="2" class="contentCell">Clash9</td>
+<td class="contentCell">New</td>
+<td class="contentCell">-0.043</td>
+<td class="contentCell">Hard</td>
+<td class="contentCell">2023/6/17 
+      12:40</td>
+<td class="contentCell"></td>
+<td class="contentCell"></td>
+<td colspan="3" class="contentCell">
+          x:11.006,
+          y:-3.956,
+          z:30.165</td>
+<td class="item1Content"><i>Element ID</i>:
+            1037843</td>
+<td class="item1Content">9TH FLOOR PLAN</td>
+<td class="item1Content">Brick, Common</td>
+<td class="item1Content">Solid</td>
+<td class="item2Content"><i>Element ID</i>:
+            956936</td>
+<td class="item2Content">NINTH FLOOR</td>
+<td class="item2Content">Copper</td>
+<td class="item2Content">Solid</td>
+</tr>
+</table>
+<hr><br></body>
+</html>

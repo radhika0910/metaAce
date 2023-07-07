@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="icon" type="image/png" href="assets/images/mACE_logo_favicon.ico">
+    <link rel="canonical" href="https://3dviewer.net">
+
+    <title>MetaACE 3D Viewer</title>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+/* https://www.behance.net/gallery/68449191/Profile-Dashboard-Design */
+
+body {
+  width: 100%;
+  background-color: #E1E1E8;
+  margin: 0;
+  font-size: 12px;
+  line-height: 18px;
+  font-family: 'Montserrat';
+  color: #34343C;
+}
+.heavy {
+  font-weight: bold;
+  padding-right: 7px;
+}
+.dashboard {
+  margin: 80px auto;
+  background-color: #F8F8FD;
+  max-width: 1200px;
+  -webkit-box-shadow: 0px 0px 40px 1px rgba(0,0,0,0.1);
+box-shadow: 0px 0px 40px 1px rgba(0,0,0,0.1);
+  font-weight: light;
+}
+
+/*SIDEBAR*/
+.sidebar {
+  box-sizing: border-box;
+  width: 200px;
+  background-color: #E9E9EF;
+  height: 900px;
+  padding: 30px;
+  display: inline-block;
+  vertical-align: top;
+}
+.menu {
+  list-style-type: none;
+  margin: 20px 0;
+  padding: 0;
+}
+.menu li {
+  margin: 7px 0;
+}
+.menu .active, .menu a:hover {
+  background-color: #ffffff;
+  margin-left: -30px;
+  padding-left: 30px;
+  border-radius: 0 4px 4px 0;
+  -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.05);
+-moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.05);
+box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.05);
+}
+.menu a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #757588;
+  display: block;
+  padding: 10px 0;
+}
+.menu i {
+  margin-right: 10px;
+  vertical-align: top;
+  padding-top: 1.5px;
+}
+.menu .active i, .menu .active a, .menu i:hover, .menu a:hover {
+  color: #6C75FF;
+}
+
+/*CONTENT*/
+.content {
+  width: 996px;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 20px 30px;
+  display: inline-block;
+  vertical-align: top;
+}
+.user-options {
+  text-align: right;
+  width: 100%;
+  height: 30px;
+}
+.user-options i {
+  vertical-align: top;
+  margin-right: 25px;
+  font-size: 16px;
+  padding-top: 10px;
+  color: #8E8E8E;
+}
+.notification {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: #ff3366;
+  border-radius: 50%;
+  border: 1.5px solid #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  margin-left: -5px;
+}
+.user-options i:hover {
+  opacity: 0.5;
+}
+.avatar-top {
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 2px;
+  margin-right: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.title-profile h1 {
+  line-height: 0px;
+}
+.columns {
+  padding-bottom: 50px;
+}
+
+
+
+/*-----COLUMNS-----*/
+.col1 {
+  width: 200px;
+  display: inline-block;
+}
+.col2 {
+  vertical-align: top;
+  width: 732px;
+  display: inline-block;
+}
+.col1 .box, .col2 .box {
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 40px 1px rgba(0,0,0,0.05);
+  box-shadow: 0px 0px 40px 1px rgba(0,0,0,0.05);
+}
+.col1 .box {
+  margin: 15px 10px 15px 0;
+}
+.col2 .box {
+  margin: 15px 0 15px 10px;
+}
+/*-----COLUMN LEFT-----*/
+.user {
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+.user img {
+  height: 40px;
+  width: 40px;
+  background-color: lightblue;
+  border-radius: 50%;
+  padding: 2px;
+  margin-right: 10px;
+}
+.user p {
+  line-height: 1.2;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 7px;
+}
+.user-name {
+  font-weight: bold;
+  font-size: 14px;
+}
+.text-faded {
+  font-size: 10px;
+  color: #8E8E8E;
+  }
+
+.follows .followings, .follows .followers {
+  box-sizing: border-box;
+  padding: 2px;
+  line-height: 5px;
+  text-align: center;
+  border: 1.5px #F1F1F1 solid;
+  border-radius: 2px;
+  width: 70px;
+  display: inline-block;
+}
+.follows .followings:hover, .follows .followers:hover {
+  border-color: #dbdbdb;
+}
+.follows .followings {
+  margin-right: 6px;
+}
+.follows .fa-arrow-right {
+  color: #55aaee;
+  font-size: 14px;
+}
+.follows .fa-arrow-left {
+  color: #eeaa22;
+  font-size: 14px;
+}
+.follownow {
+  margin: 10px 0 30px 0;
+}
+.follownow button {
+  text-align: center;
+  background-color: #ff3366;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  border-radius: 3px;
+  padding: 7px 15px;
+  font-size: 12px;
+  color: #ffffff;
+  transition: all 0.3s;
+}
+.follownow button:hover {
+  background-color: #ff88aa;
+}
+.about p {
+  line-height: 12px;
+}
+.social {
+  background-color: #fafafa;
+  margin: 20px -20px -20px -20px;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 0 0 2px 2px;
+}
+.social i {
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  border-radius: 50%;
+  margin: 0 2px;
+  color: #ffffff;
+  padding: 2px;
+  transition: 0.3s;
+}
+.social i:hover {
+  opacity: 0.5;
+}
+.social .fa-facebook-f {
+  background-color: #335599;
+}
+.social .fa-twitter {
+  background-color: #55aaee;
+}
+.social .fa-youtube {
+  background-color: red;
+}
+.social .fa-google-plus-g {
+  background-color: #dd6666;
+}
+.list .right {
+  margin-left: 100px;
+}
+.list .g {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 25px;
+  color: #ffffff;
+  transition: 0.3s;
+}
+.list .g:hover {
+  opacity: 0.5;
+}
+.list .g-1 {
+  background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+}
+.list .g-2 {
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+.list .g-3 {
+  background-image: linear-gradient(60deg, #abecd6 0%, #fbed96 100%);
+}
+.list .g-4 {
+  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+}
+.list .g-5 {
+  background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+}
+
+
+/*------------------------------------
+          RIGHT COLUMN
+------------------------------------*/
+/*---Leave a comment---*/
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1.5px #F1F1F1 solid;
+  border-radius: 2px;
+  padding: 10px;
+  font-family: montserrat;
+  display: block;
+}
+.comment-options {
+  margin-top: 10px;
+}
+.comment-options i {
+  font-size: 10px;
+  color: #8E8E8E;
+  margin: 0 4px;
+}
+.comment-options i:hover {
+  opacity: 0.7;
+}
+.comment-options button {
+  text-align: center;
+  background-color: #6C75FF;
+  display: inline;
+  border: none;
+  border-radius: 3px;
+  padding: 7px 15px;
+  font-size: 12px;
+  color: #ffffff;
+  transition: all 0.3s;
+  margin-left: 30px;
+}
+.comment-options button:hover {
+  opacity: 0.7;
+}
+/*---Individual comments---*/
+.comment-wrap{
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+.comment-indent {
+  margin-left: 47px;
+}
+.avatar {
+  height: 30px;
+  width: 30px;
+  background-color: lightblue;
+  border-radius: 50%;
+  padding: 2px;
+  margin-right: 10px;
+  vertical-align: top;
+}
+.avatar1 {
+  background-color: lightpink;
+}
+.avatar2 {
+  background-color: palegreen;
+}
+.avatar3 {
+  background-color: bisque;
+}
+.com1 {
+  display: inline-block;
+  width: 634px;
+}
+.com2 {
+  display: inline-block;
+  width: 587px;
+}
+.commentary {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border: 1.5px #F1F1F1 solid;
+  border-radius: 2px;
+}
+.commentary:hover {
+  border-color: #dbdbdb;
+}
+.comment-top {
+  margin-bottom: 10px;
+}
+.comment-top .text-faded {
+  margin-left: 30px;
+}
+.com-review {
+  float: right;
+}
+.com-review i {
+  color: #8E8E8E;
+  margin-right: 15px;
+}
+.com-review .active {
+  color: #ff3366;
+}
+.com-review i:hover, .com-review .heavy:hover {
+  opacity: 0.5;
+}
+.comment-content img {
+  width: 50px;
+  height: 50px;
+  border-radius: 2px;
+  margin-right: 5px;
+  transition: all 0.3s
+}
+.comment-content img:hover {
+  opacity: 0.7;
+}
+</style>
+    <!-- meta start -->
+    <!-- meta end -->
+
+    <!-- website start -->
+    <link rel="stylesheet" type="text/css" href="../build/website_dev/o3dv.website.min.css">
+    <link rel="stylesheet" href="/website/source/website/css/custom.css">
+    <script type="text/javascript" src="../build/website_dev/o3dv.website.min.js"></script>
+    <!-- website end -->
+    <!-- plugins start -->
+    <!-- plugins end -->
+
+    <!-- analytics start -->
+    <script type="text/javascript">
+        OV.SetWebsiteEventHandler ((eventName, eventLabel, eventParams) => {
+            console.log ({
+                eventName : eventName,
+                eventLabel : eventLabel,
+                eventParams : eventParams
+            });
+        });
+    </script>
+    <!-- analytics end -->
+
+    <!-- website init start -->
+    <script type="text/javascript">
+        OV.StartWebsite ('../libs');
+    </script>
+    <!-- website init end -->
+
+</head>
+
+<body>
+    <input type="file" id="open_file" style="display:none;" multiple></input>
+    <div class="header" id="header">
+        <div class="title">
+           <div class="title_left">
+    <a href="index.html">
+        <img style="width:165px; height:auto; float:left;" class="logo_image" src="assets/images/mACE_logo_text.png" />
+    </a>
+    <a href="#" style="display: inline-block; margin-left: 10px;">
+        <h4>Profile</h4>
+    </a>
+</div>
+
+
+            <div class="title_right" id="header_buttons">
+
+</div>
+            <div class="main_file_name only_full_width" id="main_file_name"></div>
+        </div>
+        <div class="toolbar" id="toolbar"></div>
+    </div>
+    <div class="main" id="main">
+        <div class="main_left_container only_full_width" id="main_left_container">
+            <div class="main_navigator ov_panel_set_container" id="main_navigator"></div>
+            <div class="main_splitter" id="main_navigator_splitter"></div>
+        </div>
+        <div class="main_viewer" id="main_viewer"></div>
+        <div class="main_right_container only_full_width" id="main_right_container">
+            <div class="main_splitter" id="main_sidebar_splitter"></div>
+            <div class="main_sidebar ov_panel_set_right_container" id="main_sidebar"></div>
+        </div>
+    </div>
+  <div class="intro ov_thin_scrollbar" id="intro">
+
+<div class="dashboard">
+  <div class="sidebar">
+    <img src="https://i.postimg.cc/jSyh8q89/logo.png" alt="Logo" class="logo">
+    <p>Main</p>
+    <ul class="menu">
+      <li><a href="https://www.behance.net/gallery/68449191/Profile-Dashboard-Design" target="_blank"><i class="fas fa-th-large"></i>Dashboard</a></li>
+      <li class="active"><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+      <li><a href="#"><i class="fas fa-users"></i>Team</a></li>
+      <li><a href="#"><i class="fas fa-folder-open"></i>Documents</a></li>
+      <li><a href="#"><i class="fas fa-cog"></i>Settings</a></li>
+    </ul>
+  </div>
+  <div class="content">
+    <div class="user-options">
+      <i class="fas fa-comment"></i>
+      <i class="fas fa-bell"><span class="notification"></span></i>
+      <img src="https://i.postimg.cc/6pC5MzrN/woman.png" alt="LauraF" class="avatar-top">
+    </div>
+    <div class="title-profile">
+      <h1>Profile</h1>
+      <p>Short description here.</p>
+    </div>
+    <div class="columns">
+      <div class="col1">
+        <div class="box">
+          <div class="user">
+            <img src="https://i.postimg.cc/6pC5MzrN/woman.png" alt="LauraF">
+            <p><span class="user-name">Laura Fdez.</span><br><span class="text-faded">Spain</span></p>
+          </div>
+          <div class="follows">
+            <div class="followings">
+              <p><i class="fas fa-arrow-right"></i></p>
+              <p><b>263</b></p>
+              <p class="text-faded">Following</p>
+            </div>
+            <div class="followers">
+              <p><i class="fas fa-arrow-left"></i></p>
+              <p><b>300</b></p>
+              <p class="text-faded">Followers</p>
+            </div>
+          </div>
+          <div class="follownow">
+            <button>Follow Now</button>
+          </div>
+          <div class="about">
+            <p><span class="heavy">About Me</span><br><span class="text-faded">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum sint.</span></p>
+            <p><span class="heavy">Mobile</span> <span class="text-faded">0123456789</span></p>
+            <p><span class="heavy">Email</span> <span class="text-faded">name@domain.com</span></p>
+          </div><!--/about-->
+          <div class="social">
+           <i class="fab fa-facebook-f"></i>
+           <i class="fab fa-twitter"></i>
+           <i class="fab fa-youtube"></i>
+           <i class="fab fa-google-plus-g"></i>
+          </div><!--/social-->
+        </div><!--/box-->
+        <div class="box">
+          <div class="list">
+            <p><span class="heavy">List</span> <span class="right">05</span></p>
+            <p><span class="g g-1">G</span>
+              <span class="g g-2">G</span>
+              <span class="g g-3">G</span>
+              <span class="g g-4">G</span>
+              <span class="g g-5">G</span>
+            </p>
+          </div>
+        </div><!--/box-->
+      </div>
+      <div class="col2">
+        <div class="box">
+          <textarea name="comments" id="comments" rows="3" class="text-faded">Post a new message</textarea>
+          <div class="comment-options">
+            <i class="fas fa-user"></i>
+            <i class="fas fa-paper-plane"></i>
+            <i class="fas fa-camera"></i>
+            <i class="fas fa-smile"></i>
+            <button>Send</button>
+          </div><!--/comment-options-->
+        </div>
+        <div class="box comments">
+          <div class="comment-wrap">
+            <img src="https://i.postimg.cc/Jz4T6RwS/001-woman.png" class="avatar avatar1">
+            <div class="commentary com1">
+              <div class="comment-top">
+                <span class="heavy">William Shakespeare</span><span class="text-faded">5 days ago</span>
+                <div class="com-review">
+                  <i class="fas fa-thumbs-up "></i>
+                  <i class="fas fa-thumbs-down"></i>
+                    <span class="heavy">Reply</span>
+                </div><!--/com-review-->
+              </div><!--/comment-top-->
+              <div class="comment-content"><p>Inventore nisi blanditiis necessitatibus accusamus enim expedita obcaecati commodi!</p>
+              </div><!--/comment-content-->
+            </div>
+          </div><!--/comment-wrap-->
+          <div class="comment-wrap">
+            <img src="https://i.postimg.cc/jjDMTvSX/002-man.png" class="avatar avatar2">
+            <div class="commentary com1">
+              <div class="comment-top">
+                <span class="heavy">James Bond</span><span class="text-faded">3 days ago</span>
+                <div class="com-review">
+                  <i class="fas fa-thumbs-up active"></i>
+                  <i class="fas fa-thumbs-down"></i>
+                    <span class="heavy">Reply</span>
+                </div><!--/com-review-->
+              </div><!--/comment-top-->
+              <div class="comment-content"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br> Alias ipsa est odit consectetur, maiores voluptatibus atque quidem enim nobis.</p>
+                <img src="https://loremflickr.com/300/300/car" /> <img src="https://loremflickr.com/200/200/car" /> <img src="https://loremflickr.com/400/400/car" /> <img src="https://loremflickr.com/500/500/car" />
+              </div><!--/comment-content-->
+            </div>
+          </div><!--/comment-wrap-->
+          <div class="comment-wrap comment-indent">
+            <img src="https://i.postimg.cc/kg1TLLqG/003-man-1.png" class="avatar avatar3">
+            <div class="commentary com2">
+              <div class="comment-top">
+                <span class="heavy">Harry Potter</span><span class="text-faded">1 day ago</span>
+                <div class="com-review">
+                  <i class="fas fa-thumbs-up"></i>
+                  <i class="fas fa-thumbs-down"></i>
+                    <span class="heavy">Reply</span>
+                </div><!--/com-review-->
+              </div><!--/comment-top-->
+              <div class="comment-content"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+              </div><!--/comment-content-->
+            </div>
+          </div><!--/comment-wrap-->
+          <div class="comment-wrap">
+            <img src="https://i.postimg.cc/6pC5MzrN/woman.png" alt="LauraF" class="avatar">
+            <div class="commentary com1">
+              <div class="comment-top">
+                <span class="heavy">Bruce Wayne</span><span class="text-faded">2 hours ago</span>
+                <div class="com-review">
+                  <i class="fas fa-thumbs-up active"></i>
+                  <i class="fas fa-thumbs-down"></i>
+                    <span class="heavy">Reply</span>
+                </div><!--/com-review-->
+              </div><!--/comment-top-->
+              <div class="comment-content"><p>I'm Batman.</p>
+              </div><!--/comment-content-->
+            </div>
+          </div><!--/comment-wrap-->
+        </div><!--/box-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="text-align: center; margin-bottom: 30px;"><p>Original design by <a href="https://www.behance.net/gallery/68449191/Profile-Dashboard-Design">Ashraf Hossain</a></p></div>
+
+
+
+
+
+  </div>
+
+
+</body>
+
+</html>
