@@ -5,9 +5,9 @@ import { SetEventHandler, HandleEvent } from './eventhandler.js';
 import { PluginType, RegisterPlugin } from './pluginregistry.js';
 import { ButtonDialog, ProgressDialog } from './dialog.js';
 import { ShowMessageDialog } from './dialogs.js';
-import { login } from './login.js';
+// import { login } from './login.js';
 import * as Engine from '../engine/main.js';
-import { connectToDatabase } from './db.js'; // Import the connectToDatabase function
+// import { connectToDatabase } from './db.js'; // Import the connectToDatabase function
 
 export { Engine };
 
@@ -48,12 +48,12 @@ export function StartWebsite(externalLibLocation) {
     SetExternalLibLocation(externalLibLocation);
     window.addEventListener('load', async () => {
         // Connect to the database
-        const connection = await connectToDatabase();
-             login('admin', 'password');
+        // const connection = await connectToDatabase();
 
-        if (connection)
-        {
-            console.log('Database connection successful');
+
+        // if (connection)
+
+
             let website = new Website({
                 headerDiv: document.getElementById('header'),
                 headerButtonsDiv: document.getElementById('header_buttons'),
@@ -72,11 +72,11 @@ export function StartWebsite(externalLibLocation) {
             });
             website.Load();
 
-        }
-        else
-        {
+
+        // else
+
             console.log('Database connection failed');
-        }
+
     });
 }
 
