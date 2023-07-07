@@ -407,6 +407,8 @@ textarea {
 }
 </style>
     <!-- meta start -->
+
+
     <!-- meta end -->
 
     <!-- website start -->
@@ -445,16 +447,33 @@ textarea {
     <a href="index.html">
         <img style="width:165px; height:auto; float:left;" class="logo_image" src="assets/images/mACE_logo_text.png" />
     </a>
-    <a href="#" style="display: inline-block; margin-left: 10px;">
-        <h4>Profile</h4>
-    </a>
-</div>
-
-
-            <div class="title_right" id="header_buttons">
 
 </div>
-            <div class="main_file_name only_full_width" id="main_file_name"></div>
+
+
+            <div class="title_right" id="header_buttons" style="position: absolute;z-index: 2;top: 4px; right: 6px;">
+
+       <button style="background-color: #3f5fab; color: white; padding: 10px; border: none; cursor: pointer; border-radius:8px; ">
+  Select Project   ▼
+  <ul style="display: none; background-color: white; list-style: none; padding: 0;color: black">
+    <li style="padding: 10px;">Option 1</li>
+    <li style="padding: 10px;">Option 2</li>
+    <li style="padding: 10px;">Option 3</li>
+  </ul>
+</button>
+
+
+</div>
+<script>
+  // JavaScript code to toggle the visibility of the dropdown menu
+  const button = document.querySelector('button');
+  const dropdown = document.querySelector('ul');
+
+  button.addEventListener('click', () => {
+    dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+  });
+</script>
+            <div class="main_file_name only_full_width" id="main_file_name" ></div>
         </div>
         <div class="toolbar" id="toolbar"></div>
     </div>
