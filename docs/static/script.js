@@ -1,4 +1,6 @@
-function Resize ()
+
+
+function Resize()
 {
     let isMobile = window.matchMedia ('(max-width: 600px)').matches;
     let navToggleDiv = document.getElementById ('navigation_toggle');

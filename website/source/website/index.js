@@ -46,12 +46,9 @@ export function RegisterToolbarPlugin(plugin) {
 
 export function StartWebsite(externalLibLocation) {
     SetExternalLibLocation(externalLibLocation);
+     console.log('Database connection failed');
     window.addEventListener('load', async () => {
-        // Connect to the database
-        // const connection = await connectToDatabase();
 
-
-        // if (connection)
 
 
             let website = new Website({
@@ -75,7 +72,7 @@ export function StartWebsite(externalLibLocation) {
 
         // else
 
-            console.log('Database connection failed');
+
 
     });
 }

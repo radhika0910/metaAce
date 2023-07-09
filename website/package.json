@@ -39,8 +39,9 @@
 		"website/assets/envmaps/*"
 	],
 	"scripts": {
-		"start": "npm run build_website_dev && http-server",
-		"test": "mocha test",
+		"start": "npm run build_website_dev && concurrently \"npm run start_server\" \"http-server\"",
+  "start_server": "node source/website/server.js",
+  "test": "mocha test",
 		"lint": "eslint source",
 		"lint_fix": "eslint source --fix",
 		"update_libs": "npm install && run-python3 tools/update_libs.py",
@@ -60,6 +61,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "^20.1.0",
+		"concurrently": "^8.2.0",
 		"esbuild": "^0.17.0",
 		"eslint": "^8.29.0",
 		"eslint-plugin-unused-imports": "^2.0.0",
@@ -75,8 +77,13 @@
 	},
 	"dependencies": {
 		"@simonwep/pickr": "1.8.2",
+		"cookie-parser": "^1.4.6",
 		"draco3d": "1.5.6",
+		"express-openid-connect": "^2.16.0",
 		"fflate": "0.8.0",
+		"i": "^0.3.7",
+		"jsonwebtoken": "^9.0.1",
+		"mongoose": "^7.3.1",
 		"occt-import-js": "0.0.18",
 		"rhino3dm": "7.15.0",
 		"three": "0.153.0",
@@ -85,7 +92,8 @@
 	"eslintConfig": {
 		"env": {
 			"browser": true,
-			"es2021": true
+			"es2021": true,
+			"node": true
 		},
 		"extends": "eslint:recommended",
 		"globals": {
