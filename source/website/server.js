@@ -1,8 +1,10 @@
+// server.js
 import express from 'express';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
+import bcrypt from 'bcrypt';
 
 const app = express();
 const PORT = 3000;
@@ -25,10 +27,8 @@ async function connectToDatabase() {
   }
 }
 
-app.use(express.json());
-
-import alienRouter from './routes/user.get.route.js';
-app.use('/aliens', alienRouter);
+import userRouter from './routes/user.route.js';
+app.use('/users', userRouter);
 
 // Middleware to authenticate token
 function authenticateToken(req, res, next) {
@@ -51,15 +51,32 @@ function authenticateToken(req, res, next) {
 app.post('/api/login', async (req, res) => {
   const { username, password } = req.body;
 
-  // Your authentication logic here
-  // Example: Check if the username and password match a user in the database
+  try {
+    // Retrieve the user from the database based on the username
+    const user = await user.findOne({ username });
 
-  // If authentication is successful, generate a token
-  const token = jwt.sign({ username }, 'secretKey');
+    if (!user) {
+      return res.json({ success: false, message: 'Username not found.' });
+    }
 
-  // Return the token as a response
-  res.json({ token });
+    // Compare the provided password with the stored hashed password
+    const passwordMatch = await bcrypt.compare(password, user.password);
+
+    if (passwordMatch) {
+      // If authentication is successful, generate a token
+      const token = jwt.sign({ username }, 'secretKey', { expiresIn: '24h' });
+
+      // Return the token as a response
+      return res.json({ success: true, message: 'User authenticated successfully.', token });
+    } else {
+      return res.json({ success: false, message: 'Incorrect password.' });
+    }
+  } catch (error) {
+    console.error('Error occurred during login:', error);
+    return res.json({ success: false, message: 'Error occurred during login.' });
+  }
 });
+
 
 // Protected route example
 app.get('/api/dashboard', authenticateToken, (req, res) => {

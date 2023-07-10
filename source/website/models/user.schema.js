@@ -1,19 +1,27 @@
+// models/user.schema.js
 import mongoose from 'mongoose';
 
-const alienSchema = new mongoose.Schema({
-  name: {
+const userSchema = new mongoose.Schema({
+  username: {
     type: String,
-    required: true
-  },
-  tech: {
-    type: String,
-    required: true
-  },
-  sub: {
-    type: Boolean,
     required: true,
-    default: false
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  profilePicture: {
+    type: String
+  },
+  session: {
+    token: {
+      type: String
+    },
+    expiration: {
+      type: Date
+    }
   }
 });
 
-export default mongoose.model('Alien', alienSchema);
+export default mongoose.model('User', userSchema);
